@@ -1,8 +1,10 @@
-package com.ProjectEureka.backend;
+package com.ProjectEureka.backend.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ProjectEureka.backend.repositories.UserRepository;
+import com.ProjectEureka.backend.models.User;
 import java.util.List;
 
 @Service
