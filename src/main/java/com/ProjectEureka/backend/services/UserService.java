@@ -1,27 +1,17 @@
 package com.ProjectEureka.backend.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import com.ProjectEureka.backend.repositories.UserRepository;
 import com.ProjectEureka.backend.models.User;
 import java.util.List;
+import java.util.Optional;
 
-@Service
-public class UserService {
+public interface UserService {
+    User createUser(User user);
 
-    @Autowired
-    private UserRepository userRepository;
+    User updateUser(String id, User user);
 
-    public User create(String firstName, String lastName) {
-        return userRepository.save(new User(firstName, lastName));
-    }
+    List<User> getAllUsers();
 
-    public List<User> getAll() {
-        return userRepository.findAll();
-    }
+    User getUserById(String id);
 
-    public User getByFirstName(String firstName) {
-        return userRepository.findByFirstName(firstName);
-    }
+    void deleteById(String id);
 }
