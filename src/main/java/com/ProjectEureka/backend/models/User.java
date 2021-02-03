@@ -22,11 +22,11 @@ public class User {
     private String category;
     @Field("picture_url")
     private String pictureUrl;
-    private boolean role;
+    private int role;
     private int rating;
 
     public User(String firstName, String lastName, String firebaseUuid, String email, String city, String category,
-            String pictureUrl, Boolean role, Integer rating) {
+            String pictureUrl, Integer role, Integer rating) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.firebaseUuid = firebaseUuid;

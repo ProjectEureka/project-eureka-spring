@@ -27,21 +27,24 @@ public class UserServiceImpls implements UserService {
 
     @Override
     public User getUserById(String id) {
-        Optional<User> userDb = this.userRepository.findById(id);
+        Optional<User> user = this.userRepository.findById(id);
 
-        if (userDb.isPresent()) {
-            return userDb.get();
+        if (user.isPresent()) {
+            return user.get();
         } else {
             throw new ResourceNotFoundException("User not found with id: " + id);
         }
     }
 
     @Override
-    public void deleteById(String id) {
-        Optional<User> deletedUser = this.userRepository.findById(id);
+    public User deletedUser(String id) {
+        Optional<User> user = this.userRepository.findById(id);
 
-        if (deletedUser.isPresent()) {
-            this.userRepository.delete(deletedUser.get());
+        if (user.isPresent()) {
+            User deletedUser = user.get();
+            this.userRepository.delete(user.get());
+            return deletedUser;
+
         } else {
             throw new ResourceNotFoundException("User not found with id " + id);
         }
@@ -49,10 +52,10 @@ public class UserServiceImpls implements UserService {
 
     @Override
     public User updateUser(String id, User user) {
-        Optional<User> userDb = this.userRepository.findById(id);
+        Optional<User> users = this.userRepository.findById(id);
 
-        if (userDb.isPresent()) {
-            User userUpdate = userDb.get();
+        if (users.isPresent()) {
+            User userUpdate = users.get();
             userUpdate.setFirstName(user.getFirstName());
             userUpdate.setLastName(user.getLastName());
             userUpdate.setFirebaseUuid(user.getFirebaseUuid());

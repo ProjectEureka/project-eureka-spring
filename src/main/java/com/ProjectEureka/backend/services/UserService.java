@@ -2,7 +2,6 @@ package com.ProjectEureka.backend.services;
 
 import com.ProjectEureka.backend.models.User;
 import java.util.List;
-import java.util.Optional;
 
 public interface UserService {
     User createUser(User user);
@@ -13,5 +12,5 @@ public interface UserService {
 
     User getUserById(String id);
 
-    void deleteById(String id);
+    User deletedUser(String id);
 }

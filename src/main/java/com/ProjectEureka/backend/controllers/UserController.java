@@ -1,7 +1,6 @@
 package com.ProjectEureka.backend.controllers;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.ProjectEureka.backend.models.User;
 import com.ProjectEureka.backend.services.UserService;
@@ -39,9 +38,8 @@ public class UserController {
     }
 
     @DeleteMapping("/users/{id}")
-    public ResponseEntity deleteUserById(@PathVariable("id") String id) throws Exception {
-        userService.deleteById(id);
-        return new ResponseEntity(HttpStatus.ACCEPTED);
+    public ResponseEntity<User> deletedUser(@PathVariable("id") String id) throws Exception {
+        return new ResponseEntity<User>(userService.deletedUser(id), HttpStatus.OK);
     }
 
     @PutMapping("/users/{id}")
