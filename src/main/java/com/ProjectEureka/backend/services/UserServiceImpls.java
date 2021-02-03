@@ -1,11 +1,10 @@
-package com.ProjectEureka.backend.impls;
+package com.ProjectEureka.backend.services;
 
 import java.util.List;
 import java.util.Optional;
 
 import com.ProjectEureka.backend.models.User;
 import com.ProjectEureka.backend.repositories.UserRepository;
-import com.ProjectEureka.backend.services.UserService;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
@@ -37,7 +36,7 @@ public class UserServiceImpls implements UserService {
     }
 
     @Override
-    public User deletedUser(String id) {
+    public User deleteUser(String id) {
         Optional<User> user = this.userRepository.findById(id);
 
         if (user.isPresent()) {

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/vi")
+@RequestMapping("/v1")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -38,8 +38,8 @@ public class UserController {
     }
 
     @DeleteMapping("/users/{id}")
-    public ResponseEntity<User> deletedUser(@PathVariable("id") String id) throws Exception {
-        return new ResponseEntity<User>(userService.deletedUser(id), HttpStatus.OK);
+    public ResponseEntity<User> deleteUser(@PathVariable("id") String id) throws Exception {
+        return new ResponseEntity<User>(userService.deleteUser(id), HttpStatus.OK);
     }
 
     @PutMapping("/users/{id}")

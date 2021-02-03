@@ -11,18 +11,27 @@ import lombok.Data;
 public class User {
     @Id
     private String id;
+
     @Field("first_name")
     private String firstName;
+
     @Field("last_name")
     private String lastName;
+
     @Field("firebase_uuid")
     private String firebaseUuid;
+
     private String email;
+
     private String city;
+
     private String category;
+
     @Field("picture_url")
     private String pictureUrl;
+
     private int role;
+
     private int rating;
 
     public User(String firstName, String lastName, String firebaseUuid, String email, String city, String category,

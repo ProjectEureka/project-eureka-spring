@@ -12,5 +12,5 @@ public interface UserService {
 
     User getUserById(String id);
 
-    User deletedUser(String id);
+    User deleteUser(String id);
 }
