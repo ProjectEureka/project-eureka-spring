@@ -16,16 +16,9 @@ public class ProjectEurekaBackendApplication implements CommandLineRunner {
 
 	}
 
-	@Autowired
-	private UserRepository repository;
-
 	@Override
 	public void run(String... args) throws Exception {
-		// save a couple of customers
-
-		repository.deleteAll();
-		repository.save(new User("David", "Quines"));
-		repository.save(new User("Tony", "Tong"));
+		// TODO Auto-generated method stub
 
 	}
 
