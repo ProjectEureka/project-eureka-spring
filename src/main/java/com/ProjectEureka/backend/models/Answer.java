@@ -2,6 +2,7 @@ package com.ProjectEureka.backend.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,10 +21,14 @@ import java.util.List;
 public class Answer {
     @Id
     private String id;
-    private List<String> media_urls;
-    private String answer_date;
+    @Field("media_urls")
+    private List<String> mediaUrls;
+    @Field("answer_date")
+    private String answerDate;
     private String description;
-    private Long question_id;
-    private Long user_id;
+    @Field("question_id")
+    private Long questionId;
+    @Field("user_id")
+    private Long userId;
 
 }

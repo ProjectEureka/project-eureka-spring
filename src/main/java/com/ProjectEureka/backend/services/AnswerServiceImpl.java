@@ -1,4 +1,4 @@
-package com.ProjectEureka.backend.implementaion;
+package com.ProjectEureka.backend.services;
 
 import com.ProjectEureka.backend.repositories.AnswerRepository;
 import com.ProjectEureka.backend.services.AnswerService;
@@ -26,15 +26,15 @@ public class AnswerServiceImpl implements AnswerService {
 
     @Override
     public Answer updateAnswer(String id, Answer answer) {
-        Optional<Answer> answerDb = this.answerRepository.findById(id);
-        if (answerDb.isPresent()) {
-            Answer answerUpdate = answerDb.get();
+        Optional<Answer> answerResult = this.answerRepository.findById(id);
+        if (answerResult.isPresent()) {
+            Answer answerUpdate = answerResult.get();
 
-            answerUpdate.setMedia_urls(answer.getMedia_urls());
-            answerUpdate.setAnswer_date(answer.getAnswer_date());
+            answerUpdate.setMediaUrls(answer.getMediaUrls());
+            answerUpdate.setAnswerDate(answer.getAnswerDate());
             answerUpdate.setDescription(answer.getDescription());
-            answerUpdate.setQuestion_id(answer.getQuestion_id());
-            answerUpdate.setUser_id(answer.getUser_id());
+            answerUpdate.setQuestionId(answer.getQuestionId());
+            answerUpdate.setUserId(answer.getUserId());
 
             return this.answerRepository.save(answerUpdate);
         } else {
@@ -51,9 +51,9 @@ public class AnswerServiceImpl implements AnswerService {
     @Override
     public Answer getAnswerById(String answerId) {
 
-        Optional<Answer> answerDb = this.answerRepository.findById(answerId);
-        if (answerDb.isPresent()) {
-            return answerDb.get();
+        Optional<Answer> answerResult = this.answerRepository.findById(answerId);
+        if (answerResult.isPresent()) {
+            return answerResult.get();
         } else {
             throw new ResourceNotFoundException("Record not found with id : " + answerId);
         }
@@ -61,10 +61,10 @@ public class AnswerServiceImpl implements AnswerService {
 
     @Override
     public void deleteAnswer(String answerId) {
-        Optional<Answer> productDb = this.answerRepository.findById(answerId);
+        Optional<Answer> answerResult = this.answerRepository.findById(answerId);
 
-        if (productDb.isPresent()) {
-            this.answerRepository.delete(productDb.get());
+        if (answerResult.isPresent()) {
+            this.answerRepository.delete(answerResult.get());
         } else {
             throw new ResourceNotFoundException("Record not found with id : " + answerId);
         }
