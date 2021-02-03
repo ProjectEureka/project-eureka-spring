@@ -63,7 +63,7 @@ public class UserServiceImpls implements UserService {
             userUpdate.setCity(user.getCity());
             userUpdate.setCategory(user.getCategory());
             userUpdate.setPictureUrl(user.getPictureUrl());
-            userUpdate.setRole(user.isRole());
+            userUpdate.setRole(user.getRole());
             userUpdate.setRating(user.getRating());
 
             return this.userRepository.save(userUpdate);
