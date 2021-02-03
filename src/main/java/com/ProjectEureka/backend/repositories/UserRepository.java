@@ -10,22 +10,4 @@ import com.ProjectEureka.backend.models.User;
 public interface UserRepository extends MongoRepository<User, String> {
 
     public Optional<User> findById(String id);
-
-    public User findByFirstName(String firstName);
-
-    public User findByLastName(String lastName);
-
-    public User findByFirebaseUuid(String firebaseUuid);
-
-    public User findByEmail(String email);
-
-    public User findByCity(String city);
-
-    public User findByCategory(String category);
-
-    public User findByPictureUrl(String pictureUrl);
-
-    public User findByRole(Boolean role);
-
-    public User findByRating(Integer rating);
 }
