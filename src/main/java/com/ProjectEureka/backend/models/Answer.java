@@ -23,11 +23,15 @@ public class Answer {
     private String id;
     @Field("media_urls")
     private List<String> mediaUrls;
+
     @Field("answer_date")
     private String answerDate;
+
     private String description;
+
     @Field("question_id")
     private Long questionId;
+
     @Field("user_id")
     private Long userId;
 
