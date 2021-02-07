@@ -18,24 +18,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api")
 public class AnswerController {
     @Autowired
     private AnswerService answerService;
 
     @GetMapping("/answers")
-    public ResponseEntity<List<Answer>> getallAnswers() {
-        return ResponseEntity.ok().body(answerService.getAllAnswers());
+    public ResponseEntity<List<Answer>> getAllAnswers() {
+        return new ResponseEntity<List<Answer>>(answerService.getAllAnswers(), HttpStatus.OK);
     }
 
     @GetMapping("/answers/{id}")
-    public ResponseEntity<Answer> getAnswerById(@PathVariable("id") String id) {
-        return ResponseEntity.ok().body(answerService.getAnswerById(id));
+    public ResponseEntity<Answer> getAnswerById(@PathVariable("id") String id) throws Exception {
+        return new ResponseEntity<Answer>(answerService.getAnswerById(id), HttpStatus.OK);
     }
 
     @PostMapping("/answers")
     public ResponseEntity<Answer> createAnswer(@RequestBody Answer answer) {
-        return ResponseEntity.ok().body(this.answerService.createAnswer(answer));
+        return new ResponseEntity<Answer>(answerService.createAnswer(answer), HttpStatus.CREATED);
+
     }
 
     @PutMapping("/answers/{id}")
@@ -45,10 +46,8 @@ public class AnswerController {
     }
 
     @DeleteMapping("/answers/{id}")
-    public HttpStatus deleteAnswer(@PathVariable("id") String id) {
-        this.answerService.deleteAnswer(id);
-        return HttpStatus.OK;
+    public ResponseEntity<Answer> deleteAnswer(@PathVariable("id") String id) {
+        return new ResponseEntity<Answer>(answerService.deleteAnswer(id), HttpStatus.OK);
     }
 
 }
-

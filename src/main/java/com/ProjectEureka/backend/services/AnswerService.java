@@ -13,5 +13,5 @@ public interface AnswerService {
 
     Answer getAnswerById(String id);
 
-    void deleteAnswer(String id);
+    Answer deleteAnswer(String id);
 }

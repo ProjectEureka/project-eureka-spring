@@ -6,21 +6,18 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Document(collection = "Answers")
 public class Answer {
     @Id
     private String id;
+
     @Field("media_urls")
     private List<String> mediaUrls;
 

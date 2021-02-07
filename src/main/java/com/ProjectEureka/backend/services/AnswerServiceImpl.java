@@ -1,7 +1,6 @@
 package com.ProjectEureka.backend.services;
 
 import com.ProjectEureka.backend.repositories.AnswerRepository;
-import com.ProjectEureka.backend.services.AnswerService;
 import com.ProjectEureka.backend.exception.ResourceNotFoundException;
 import com.ProjectEureka.backend.models.Answer;
 
@@ -60,11 +59,13 @@ public class AnswerServiceImpl implements AnswerService {
     }
 
     @Override
-    public void deleteAnswer(String answerId) {
+    public Answer deleteAnswer(String answerId) {
         Optional<Answer> answerResult = this.answerRepository.findById(answerId);
 
         if (answerResult.isPresent()) {
+            Answer deletedAnswer = answerResult.get();
             this.answerRepository.delete(answerResult.get());
+            return deletedAnswer;
         } else {
             throw new ResourceNotFoundException("Record not found with id : " + answerId);
         }
