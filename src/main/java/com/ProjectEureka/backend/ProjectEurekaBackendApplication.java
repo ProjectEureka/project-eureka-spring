@@ -8,12 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ProjectEurekaBackendApplication implements CommandLineRunner {
 	public static void main(final String[] args) {
 		SpringApplication.run(ProjectEurekaBackendApplication.class, args);
-
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-
+		// TODO Auto-generated method stub
 	}
 
 }
