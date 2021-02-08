@@ -42,7 +42,7 @@ public class AnswerController {
     @PutMapping("/answers/{id}")
     public ResponseEntity<Answer> updateAnswers(@PathVariable("id") String id, @RequestBody Answer answer) {
         answer.setId(id);
-        return ResponseEntity.ok().body(this.answerService.updateAnswer(id, answer));
+        return new ResponseEntity<Answer>(this.answerService.updateAnswer(id, answer), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/answers/{id}")
