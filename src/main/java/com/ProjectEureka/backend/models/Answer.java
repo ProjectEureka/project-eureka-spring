@@ -27,9 +27,9 @@ public class Answer {
     private String description;
 
     @Field("question_id")
-    private Long questionId;
+    private String questionId;
 
     @Field("user_id")
-    private Long userId;
+    private String userId;
 
 }

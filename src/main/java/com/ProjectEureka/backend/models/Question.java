@@ -38,10 +38,10 @@ public class Question {
     private Boolean visible;
 
     @Field("user_id")
-    private Long userId;
+    private String userId;
 
     public Question(String title, String questionDate, String description, String category, String status,
-            Boolean visible, Long userId) {
+            Boolean visible, String userId) {
         this.title = title;
         this.questionDate = questionDate;
         this.description = description;
