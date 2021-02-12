@@ -30,10 +30,12 @@ public class QuestionServiceImpl implements QuestionService {
         if (questionResult.isPresent()) {
             Question questionUpdate = questionResult.get();
 
-            questionUpdate.setMediaUrls(question.getMediaUrls());
+            questionUpdate.setTitle(question.getTitle());
             questionUpdate.setQuestionDate(question.getQuestionDate());
             questionUpdate.setDescription(question.getDescription());
             questionUpdate.setCategory(question.getCategory());
+            questionUpdate.setMediaUrls(question.getMediaUrls());
+
 
             return this.questionRepository.save(questionUpdate);
         } else {
