@@ -6,10 +6,9 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -23,7 +22,7 @@ public class Question {
     private String title;
 
     @Field("question_date")
-    private String questionDate;
+    private Date questionDate;
 
     private String description;
 
@@ -32,15 +31,14 @@ public class Question {
     @Field("media_urls")
     private List<String> mediaUrls;
 
-    @Field("status")
-    private String status;
+    private Boolean status;
 
     private Boolean visible;
 
     @Field("user_id")
     private String userId;
 
-    public Question(String title, String questionDate, String description, String category, String status,
+    public Question(String title, Date questionDate, String description, String category, Boolean status,
             Boolean visible, String userId) {
         this.title = title;
         this.questionDate = questionDate;

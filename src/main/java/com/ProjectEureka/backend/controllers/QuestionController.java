@@ -1,4 +1,4 @@
-package com.ProjectEureka.backend.controller;
+package com.ProjectEureka.backend.controllers;
 
 import java.util.List;
 
