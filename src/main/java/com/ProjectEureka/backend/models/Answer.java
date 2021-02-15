@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -22,14 +23,14 @@ public class Answer {
     private List<String> mediaUrls;
 
     @Field("answer_date")
-    private String answerDate;
+    private Date answerDate;
 
     private String description;
 
     @Field("question_id")
-    private Long questionId;
+    private String questionId;
 
     @Field("user_id")
-    private Long userId;
+    private String userId;
 
 }
