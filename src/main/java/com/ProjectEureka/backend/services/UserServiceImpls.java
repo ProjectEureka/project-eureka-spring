@@ -69,6 +69,5 @@ public class UserServiceImpls implements UserService {
         } else {
             throw new ResourceNotFoundException("User not found with id: " + id);
         }
-
     }
 }

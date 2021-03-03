@@ -1,5 +1,7 @@
 package com.ProjectEureka.backend.models;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -25,7 +27,7 @@ public class User {
 
     private String city;
 
-    private String category;
+    private List<String> category;
 
     @Field("picture_url")
     private String pictureUrl;
@@ -33,17 +35,4 @@ public class User {
     private int role;
 
     private int rating;
-
-    public User(String firstName, String lastName, String firebaseUuid, String email, String city, String category,
-            String pictureUrl, Integer role, Integer rating) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.firebaseUuid = firebaseUuid;
-        this.email = email;
-        this.city = city;
-        this.category = category;
-        this.pictureUrl = pictureUrl;
-        this.role = role;
-        this.rating = rating;
-    }
 }
