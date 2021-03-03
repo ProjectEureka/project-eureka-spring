@@ -10,6 +10,7 @@ import lombok.Data;
 public class Profile {
     // user info
     User user;
+
     // questions
     List<Question> questions;
 
