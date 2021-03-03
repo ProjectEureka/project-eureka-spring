@@ -38,14 +38,4 @@ public class Question {
     @Field("user_id")
     private String userId;
 
-    public Question(String title, Date questionDate, String description, String category, Boolean status,
-            Boolean visible, String userId) {
-        this.title = title;
-        this.questionDate = questionDate;
-        this.description = description;
-        this.category = category;
-        this.status = status;
-        this.visible = visible;
-        this.userId = userId;
-    }
 }
