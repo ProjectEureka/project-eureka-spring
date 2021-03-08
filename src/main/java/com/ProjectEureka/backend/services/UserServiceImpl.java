@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 
 @Service
-public class UserServiceImpls implements UserService {
+public class UserServiceImpl implements UserService {
     @Autowired
     UserRepository userRepository;
 
@@ -70,7 +70,6 @@ public class UserServiceImpls implements UserService {
         } else {
             throw new ResourceNotFoundException("User not found with id: " + id);
         }
-
     }
 
 }
