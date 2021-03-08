@@ -34,7 +34,7 @@ public class ProfileServiceImpl implements ProfileService {
         List<Question> questionsByUserId = questionRepository.findByUserId(id);
         List<Answer> answersByUserId = answerRepository.findByUserId(id);
 
-        if (user.isPresent() && !questionsByUserId.isEmpty() && !answersByUserId.isEmpty()) {
+        if (user.isPresent()) {
             return new Profile(user.get(), questionsByUserId, answersByUserId);
         } else {
             throw new ResourceNotFoundException("Record not found with id : " + id);

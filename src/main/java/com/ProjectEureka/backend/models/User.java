@@ -8,6 +8,8 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import lombok.Data;
 
+import java.util.ArrayList;
+
 @Document(collection = "Users")
 @Data
 public class User {
@@ -34,5 +36,8 @@ public class User {
 
     private int role;
 
-    private int rating;
+    private ArrayList<Integer> ratings;
+
+    @Field("average_rating")
+    private double averageRating;
 }

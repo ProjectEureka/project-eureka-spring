@@ -63,11 +63,13 @@ public class UserServiceImpl implements UserService {
             userUpdate.setCategory(user.getCategory());
             userUpdate.setPictureUrl(user.getPictureUrl());
             userUpdate.setRole(user.getRole());
-            userUpdate.setRating(user.getRating());
+            userUpdate.setRatings(user.getRatings());
+            userUpdate.setAverageRating(user.getAverageRating());
 
             return this.userRepository.save(userUpdate);
         } else {
             throw new ResourceNotFoundException("User not found with id: " + id);
         }
     }
+
 }
