@@ -1,7 +1,6 @@
 package com.ProjectEureka.backend.services;
 
 import com.ProjectEureka.backend.repositories.QuestionRepository;
-import com.ProjectEureka.backend.services.QuestionService;
 import com.ProjectEureka.backend.exception.ResourceNotFoundException;
 import com.ProjectEureka.backend.models.Question;
 
@@ -12,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
-
 
 @Service
 @Transactional
@@ -36,7 +34,6 @@ public class QuestionServiceImpl implements QuestionService {
             questionUpdate.setDescription(question.getDescription());
             questionUpdate.setCategory(question.getCategory());
             questionUpdate.setMediaUrls(question.getMediaUrls());
-
 
             return this.questionRepository.save(questionUpdate);
         } else {
@@ -63,7 +60,6 @@ public class QuestionServiceImpl implements QuestionService {
     @Override
     public Question deleteQuestion(String id) {
         Optional<Question> questionResult = this.questionRepository.findById(id);
-
 
         if (questionResult.isPresent()) {
             Question deletedQuestion = questionResult.get();

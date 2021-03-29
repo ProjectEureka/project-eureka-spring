@@ -12,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-
 @Service
 @Transactional
 public class AnswerServiceImpl implements AnswerService {
@@ -70,7 +69,5 @@ public class AnswerServiceImpl implements AnswerService {
         } else {
             throw new ResourceNotFoundException("Record not found with id : " + answerId);
         }
-
     }
-
 }

@@ -1,5 +1,7 @@
 package com.ProjectEureka.backend.models;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -27,7 +29,7 @@ public class User {
 
     private String city;
 
-    private String category;
+    private List<String> category;
 
     @Field("picture_url")
     private String pictureUrl;
@@ -38,5 +40,4 @@ public class User {
 
     @Field("average_rating")
     private double averageRating;
-
 }
