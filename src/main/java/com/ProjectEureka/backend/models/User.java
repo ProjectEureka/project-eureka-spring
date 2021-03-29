@@ -36,7 +36,7 @@ public class User {
 
     private int role;
 
-    private ArrayList<Integer> ratings;
+    private ArrayList<Double> ratings;
 
     @Field("average_rating")
     private double averageRating;

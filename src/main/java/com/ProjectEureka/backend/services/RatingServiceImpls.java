@@ -25,14 +25,14 @@ public class RatingServiceImpls implements RatingService {
             User userUpdate = users.get();
 
             // get current rating ArrayList of a user
-            ArrayList<Integer> userRating = userUpdate.getRatings();
+            ArrayList<Double> userRating = userUpdate.getRatings();
 
             // append new rating to current ArrayList
             userRating.add(rating.getRating());
 
             // get average of a rating ArrayList
             Double averageRating = userRating.stream()
-                    .mapToInt(number -> number)
+                    .mapToDouble(number -> number)
                     .average().getAsDouble();
 
             // round to 1 decimal place

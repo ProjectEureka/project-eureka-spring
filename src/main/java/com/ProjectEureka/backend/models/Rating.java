@@ -8,6 +8,6 @@ public class Rating {
     @Id
     private String id;
 
-    private int rating;
+    private double rating;
 
 }
