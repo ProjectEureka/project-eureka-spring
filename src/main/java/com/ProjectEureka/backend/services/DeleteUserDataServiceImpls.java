@@ -26,18 +26,20 @@ public class DeleteUserDataServiceImpls implements DeleteUserDataService {
 
             deleteUser.setFirstName("deleted");
             deleteUser.setLastName("deleted");
+            deleteUser.setFirebaseUuid("deleted");
             deleteUser.setEmail("deleted");
             deleteUser.setCity("deleted");
-            deleteUser.setCategory("deleted");
+            deleteUser.setCategory(new ArrayList<String>());
             deleteUser.setPictureUrl("deleted");
             deleteUser.setRole(-1);
             deleteUser.setRatings(new ArrayList<Integer>());
             deleteUser.setAverageRating(0.0);
 
-            return deleteUser;
+            return this.userRepository.save(deleteUser);
         }
         else{
             throw new ResourceNotFoundException("User not found with id : " + id);
         }
+
     }   
 }
