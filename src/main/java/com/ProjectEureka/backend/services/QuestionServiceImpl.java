@@ -34,6 +34,8 @@ public class QuestionServiceImpl implements QuestionService {
             questionUpdate.setDescription(question.getDescription());
             questionUpdate.setCategory(question.getCategory());
             questionUpdate.setMediaUrls(question.getMediaUrls());
+            questionUpdate.setStatus(question.getStatus());
+            questionUpdate.setVisible(question.getVisible());
 
             return this.questionRepository.save(questionUpdate);
         } else {
