@@ -15,18 +15,18 @@ public class VideoCommunicationController {
     @Autowired
     private VideoCallService videoCallService;
 
-    @GetMapping("call/{id}")
-    public Map<String, String> getTokenCall(@PathVariable("id") String id) throws Exception {
-        return Collections.singletonMap("token", videoCallService.getAgoraTokenCall(id));
+    @GetMapping("call/{call_id}")
+    public Map<String, String> getTokenCall(@PathVariable("call_id") String call_id) throws Exception {
+        return Collections.singletonMap("token", videoCallService.getAgoraTokenCall(call_id));
     }
 
-    @GetMapping("answer/{id}")
-    public Map<String, String> getTokenAnswer(@PathVariable("id") String id) throws Exception {
-        return Collections.singletonMap("token", videoCallService.getAgoraTokenAnswer(id));
+    @GetMapping("answer/{call_id}")
+    public Map<String, String> getTokenAnswer(@PathVariable("call_id") String call_id) throws Exception {
+        return Collections.singletonMap("token", videoCallService.getAgoraTokenAnswer(call_id));
     }
 
-    @DeleteMapping("hungup/{id}")
-    public Map<String, String> hungUpCall(@PathVariable("id") String id) throws Exception {
-        return Collections.singletonMap("token", videoCallService.hungUpCall(id));
+    @DeleteMapping("hungup/{call_id}")
+    public String hungUpCall(@PathVariable("call_id") String call_id) throws Exception {
+        return videoCallService.hungUpCall(call_id);
     }
 }

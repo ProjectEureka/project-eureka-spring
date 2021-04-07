@@ -1,6 +1,5 @@
 package com.ProjectEureka.backend;
 
-import com.ProjectEureka.backend.services.VideoCallService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,7 +13,6 @@ public class ProjectEurekaBackendApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		//VideoCallService.testAgoraToken();
 	}
 
 }
