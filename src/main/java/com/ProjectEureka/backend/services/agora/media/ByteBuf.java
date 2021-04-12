@@ -7,6 +7,7 @@ import java.util.TreeMap;
 
 /**
  * Created by Li on 10/1/2016.
+ * Link: https://github.com/AgoraIO
  */
 public class ByteBuf {
     ByteBuffer buffer = ByteBuffer.allocate(1024).order(ByteOrder.LITTLE_ENDIAN);
