@@ -32,7 +32,7 @@ public class DeleteUserDataServiceImpls implements DeleteUserDataService {
             deleteUser.setCategory(new ArrayList<String>());
             deleteUser.setPictureUrl("deleted");
             deleteUser.setRole(-1);
-            deleteUser.setRatings(new ArrayList<Integer>());
+            deleteUser.setRatings(new ArrayList<Double>());
             deleteUser.setAverageRating(0.0);
 
             return this.userRepository.save(deleteUser);
