@@ -14,10 +14,8 @@ import com.ProjectEureka.backend.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Transactional
 public class ProfileServiceImpl implements ProfileService {
     @Autowired
     UserRepository userRepository;

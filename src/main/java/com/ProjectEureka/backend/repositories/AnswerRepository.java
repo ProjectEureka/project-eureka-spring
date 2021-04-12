@@ -13,4 +13,7 @@ public interface AnswerRepository extends MongoRepository<Answer, String> {
 
     @Query(value = "{ 'user_id' : ?0 }")
     public List<Answer> findByUserId(String id);
+
+    @Query(value = "{ 'question_id' : ?0 }")
+    public List<Answer> findByQuestionId(String questionId);
 }
