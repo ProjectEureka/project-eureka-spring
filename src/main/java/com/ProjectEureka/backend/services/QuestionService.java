@@ -1,8 +1,8 @@
 package com.ProjectEureka.backend.services;
 
-import java.util.List;
-
 import com.ProjectEureka.backend.models.Question;
+
+import java.util.List;
 
 public interface QuestionService {
     Question createQuestion(Question question);

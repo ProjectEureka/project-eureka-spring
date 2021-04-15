@@ -1,13 +1,13 @@
 package com.ProjectEureka.backend.services;
 
-import java.util.ArrayList;
-import java.util.Optional;
-
 import com.ProjectEureka.backend.exception.ResourceNotFoundException;
 import com.ProjectEureka.backend.models.User;
 import com.ProjectEureka.backend.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class DeleteUserDataServiceImpls implements DeleteUserDataService {
