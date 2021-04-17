@@ -1,12 +1,11 @@
 package com.ProjectEureka.backend.repositories;
 
+import com.ProjectEureka.backend.models.Question;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
 import java.util.List;
 import java.util.Optional;
-
-import com.ProjectEureka.backend.models.Question;
 
 public interface QuestionRepository extends MongoRepository<Question, String> {
     public Optional<Question> findById(String id);

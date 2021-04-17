@@ -2,7 +2,6 @@ package com.ProjectEureka.backend.controllers;
 
 import com.ProjectEureka.backend.models.MoreDetail;
 import com.ProjectEureka.backend.services.MoreDetailService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

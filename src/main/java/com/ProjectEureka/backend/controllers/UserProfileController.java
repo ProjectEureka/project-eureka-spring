@@ -2,7 +2,6 @@ package com.ProjectEureka.backend.controllers;
 
 import com.ProjectEureka.backend.models.Profile;
 import com.ProjectEureka.backend.services.ProfileService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

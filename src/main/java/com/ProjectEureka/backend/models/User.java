@@ -1,14 +1,12 @@
 package com.ProjectEureka.backend.models;
 
-import java.util.List;
-
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import lombok.Data;
-
 import java.util.ArrayList;
+import java.util.List;
 
 @Document(collection = "Users")
 @Data

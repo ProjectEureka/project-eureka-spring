@@ -3,15 +3,9 @@ package com.ProjectEureka.backend.models;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.util.List;
-
 @Data
 @AllArgsConstructor
-public class MoreDetail {
+public class UserAnswer {
     User user;
-
-    Question question;
-
-    List<UserAnswer> userAnswer;
-
+    Answer answer;
 }
