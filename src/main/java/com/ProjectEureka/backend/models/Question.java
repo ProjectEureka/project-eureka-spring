@@ -30,7 +30,7 @@ public class Question {
     @Field("media_urls")
     private List<String> mediaUrls;
 
-    private Boolean status;
+    private Boolean closed;
 
     private Boolean visible;
 

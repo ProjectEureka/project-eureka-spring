@@ -32,4 +32,7 @@ public class Answer {
     @Field("user_id")
     private String userId;
 
+    @Field("best_answer")
+    private Boolean bestAnswer;
+
 }
