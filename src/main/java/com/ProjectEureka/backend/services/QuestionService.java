@@ -9,6 +9,8 @@ public interface QuestionService {
 
     Question updateQuestion(String id, Question question);
 
+    Question updateQuestionVisibility(String id);
+
     List<Question> getAllQuestions();
 
     Question getQuestionById(String id);

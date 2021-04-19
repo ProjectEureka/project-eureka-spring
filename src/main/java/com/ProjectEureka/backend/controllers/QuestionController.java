@@ -36,6 +36,12 @@ public class QuestionController {
         return new ResponseEntity<Question>(questionService.updateQuestion(id, question), HttpStatus.CREATED);
     }
 
+    @PutMapping("/questions/{id}/archive")
+    public ResponseEntity<Question> updateQuestionVisibility(@PathVariable("id") String id) {
+        return new ResponseEntity<Question>(questionService.updateQuestionVisibility(id), HttpStatus.CREATED);
+    }
+
+
     @DeleteMapping("/questions/{id}")
     public ResponseEntity<Question> deleteQuestion(@PathVariable("id") String id) throws Exception {
         return new ResponseEntity<Question>(questionService.deleteQuestion(id), HttpStatus.OK);

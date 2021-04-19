@@ -32,7 +32,7 @@ public class QuestionServiceImpl implements QuestionService {
             questionUpdate.setDescription(question.getDescription());
             questionUpdate.setCategory(question.getCategory());
             questionUpdate.setMediaUrls(question.getMediaUrls());
-            questionUpdate.setStatus(question.getStatus());
+            questionUpdate.setClosed(question.getClosed());
             questionUpdate.setVisible(question.getVisible());
 
             return this.questionRepository.save(questionUpdate);
@@ -40,6 +40,21 @@ public class QuestionServiceImpl implements QuestionService {
             throw new ResourceNotFoundException("Record not found with id : " + id);
         }
     }
+
+    @Override
+    public Question updateQuestionVisibility(String id) {
+        Optional<Question> questionResult = this.questionRepository.findById(id);
+        if (questionResult.isPresent()) {
+            Question questionUpdate = questionResult.get();
+            questionUpdate.setVisible(false);
+
+            return this.questionRepository.save(questionUpdate);
+        } else {
+            throw new ResourceNotFoundException("Record not found with id : " + id);
+        }
+    }
+
+
 
     @Override
     public List<Question> getAllQuestions() {

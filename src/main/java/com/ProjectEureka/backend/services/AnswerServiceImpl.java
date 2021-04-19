@@ -32,6 +32,7 @@ public class AnswerServiceImpl implements AnswerService {
             answerUpdate.setDescription(answer.getDescription());
             answerUpdate.setQuestionId(answer.getQuestionId());
             answerUpdate.setUserId(answer.getUserId());
+            answerUpdate.setBestAnswer(answer.getBestAnswer());
 
             return this.answerRepository.save(answerUpdate);
         } else {
